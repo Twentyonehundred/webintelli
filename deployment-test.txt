@@ -1,0 +1,3 @@
+GitHub Actions deployment successful!
+Deployed at: 2026-07-09
+This file confirms auto-deployment is working correctly.
