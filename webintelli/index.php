@@ -1,6 +1,6 @@
 <?php
 /**
- * Main template file.
+ * Main template file and blog index.
  *
  * @package WebIntelli
  */
@@ -8,42 +8,34 @@
 get_header();
 ?>
 
-<main class="site-main">
-	<?php if ( have_posts() ) : ?>
-
+<header class="entry-header wi-wrap">
+	<h1>
 		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
-				<h2 class="entry-title">
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-				</h2>
-
-				<?php if ( 'post' === get_post_type() ) : ?>
-					<p class="entry-meta">
-						<time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>">
-							<?php echo esc_html( get_the_date() ); ?>
-						</time>
-					</p>
-				<?php endif; ?>
-
-				<div class="entry-content">
-					<?php the_excerpt(); ?>
-				</div>
-			</article>
-			<?php
-		endwhile;
-
-		the_posts_pagination();
+		if ( is_home() && get_option( 'page_for_posts' ) ) {
+			echo esc_html( get_the_title( get_option( 'page_for_posts' ) ) );
+		} else {
+			esc_html_e( 'Journal', 'webintelli' );
+		}
 		?>
+	</h1>
+</header>
 
+<div class="wi-wrap">
+	<?php if ( have_posts() ) : ?>
+		<div class="card-grid">
+			<?php
+			while ( have_posts() ) {
+				the_post();
+				webintelli_card();
+			}
+			?>
+		</div>
+
+		<?php webintelli_pagination(); ?>
 	<?php else : ?>
-
 		<p><?php esc_html_e( 'Nothing has been published yet.', 'webintelli' ); ?></p>
-
 	<?php endif; ?>
-</main>
+</div>
 
 <?php
 get_footer();
