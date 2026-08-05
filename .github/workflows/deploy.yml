@@ -15,7 +15,7 @@ jobs:
         uses: wpengine/github-action-wpe-site-deploy@v3
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
-          WPE_ENV: webintell
+          WPE_ENV: intelweb
           SRC_PATH: "webintelli/"
           REMOTE_PATH: "wp-content/themes/webintelli/"
           PHP_LINT: TRUE
