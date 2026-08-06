@@ -11,12 +11,14 @@
 			"custom": true,
 			"defaultPalette": false,
 			"palette": [
-				{ "slug": "espresso", "color": "#1C1310", "name": "Espresso" },
-				{ "slug": "roast", "color": "#2E211B", "name": "Roast" },
+				{ "slug": "white", "color": "#FFFFFF", "name": "White" },
+				{ "slug": "shell", "color": "#FDFBF8", "name": "Shell" },
+				{ "slug": "tint", "color": "#FAF6F1", "name": "Tint" },
 				{ "slug": "amber", "color": "#C4622D", "name": "Amber" },
-				{ "slug": "cream", "color": "#FAF6F0", "name": "Cream" },
-				{ "slug": "paper", "color": "#FFFDFA", "name": "Paper" },
-				{ "slug": "muted", "color": "#6B5D54", "name": "Muted" }
+				{ "slug": "amber-soft", "color": "#F6E7DC", "name": "Amber Soft" },
+				{ "slug": "ink", "color": "#241A15", "name": "Ink" },
+				{ "slug": "muted", "color": "#6F6158", "name": "Muted" },
+				{ "slug": "espresso", "color": "#1C1310", "name": "Espresso" }
 			]
 		},
 		"typography": {
@@ -46,8 +48,8 @@
 	},
 	"styles": {
 		"color": {
-			"background": "var(--wp--preset--color--cream)",
-			"text": "var(--wp--preset--color--espresso)"
+			"background": "var(--wp--preset--color--white)",
+			"text": "var(--wp--preset--color--ink)"
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--sans)",
@@ -56,11 +58,20 @@
 		},
 		"elements": {
 			"link": {
-				"color": { "text": "var(--wp--preset--color--amber)" }
+				"color": { "text": "#9C4A1C" }
 			},
-			"h1": { "typography": { "fontWeight": "800", "lineHeight": "1.1" } },
-			"h2": { "typography": { "fontWeight": "800", "lineHeight": "1.15" } },
-			"h3": { "typography": { "fontWeight": "700", "lineHeight": "1.2" } }
+			"h1": {
+				"typography": { "fontWeight": "800", "lineHeight": "1.1", "letterSpacing": "-0.025em" },
+				"color": { "text": "var(--wp--preset--color--espresso)" }
+			},
+			"h2": {
+				"typography": { "fontWeight": "800", "lineHeight": "1.15", "letterSpacing": "-0.025em" },
+				"color": { "text": "var(--wp--preset--color--espresso)" }
+			},
+			"h3": {
+				"typography": { "fontWeight": "700", "lineHeight": "1.2" },
+				"color": { "text": "var(--wp--preset--color--espresso)" }
+			}
 		}
 	}
 }
